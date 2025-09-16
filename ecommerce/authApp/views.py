@@ -22,7 +22,7 @@ def signup(request):
 		user.save()
 		return HttpResponse('user created', email)
 
-	return render(request, 'signup.html')
+	return render(request, 'authentication/signup.html')
 		
 
 

@@ -1,1 +1,35 @@
-<h1>signup</h1>
+{% extends 'base.html' %}
+
+{% block title %} Home  {% endblock title %}
+{% block content %}
+    <br>
+    <div class="Card bg-dark p-5">
+
+      <h2 class="text-light">SignUp</h2>
+
+      <form  action="/auth/signup/" method="post">{% csrf_token  %}
+      <br>
+
+      <label for="email">Email</label>
+      <div class="form-group">
+        <input type="email" class="form-control p-2" id="email" name="email" required>
+      </div>
+      <label for="pass1">Password</label>
+      <div class="form-group">
+        <input type="Password" class="form-control" id="pass1" name="pass1" required>
+      </div>
+      <label for="pass2">Confirm password</label>
+      <div class="form-group">
+        <input type="password" class="form-control" id="pass2" name="pass2" required>
+      </div>
+      <br>
+
+      <button type="submit" class="btn bg-info">SignIn</button>
+
+      <br>
+      Already User? <a href="/auth/login/">Login</a>
+      
+    </form> 
+    </div>
+
+{% endblock content %}
